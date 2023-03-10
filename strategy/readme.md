@@ -10,6 +10,6 @@
 
 | Character 	| Jump 	| Run  	| Attack 	|
 |-----------	|------	|------	|--------	|
-| 1         	| Mid  	| Mid  	| Strong 	|
+| 1         	| Mid  	| Mid  	| High 	|
 | 2         	| High 	| Fast 	| Mid    	|
-| 3         	| Low  	| Fast 	| Strong 	|
+| 3         	| Low  	| Fast 	| High 	|
