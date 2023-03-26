@@ -15,20 +15,24 @@ class Main{
         c.jump();
         c.run();
 
-        System.out.println("---------------------");
-        System.out.println("Character 02");
-        c = new Character02();
-        c.attack();
-        c.jump();
-        c.run();
+        // State: Normal
+        System.out.println("Initial Life: " + c.getLife());
+        System.out.println("Initial State: " + c.getState().toString());
+        System.out.println();
+        
+        // State: Strong
+        c.earnLife(40);
+        System.out.println("Life after earning 20: " + c.getLife());
+        System.out.println("State after earning 20: " + c.getState().toString());
+        System.out.println();
 
-        System.out.println("---------------------");
-        System.out.println("Character 03");
-        c = new Character03();
-        c.attack();
-        c.jump();
-        c.run();
+        // State: Danger
+        c.loseLife(75);
+        System.out.println("Life after losing 50: " + c.getLife());
+        System.out.println("State after losing 50: " + c.getState().toString());
+        System.out.println();
 
-        System.out.println("--- Game Over ---");
+        // erro -> personagem morte
+        // console -> dangerstate
     }
 }

@@ -2,9 +2,9 @@ package Skills.Run.Concrete;
 
 import Skills.Run.Run;
 
-public class LowRun implements Run {
+public class SlowRun implements Run {
     @Override
     public void run() {
-        System.out.println("Low Run");
+        System.out.println("Slow Run");
     }
 }
