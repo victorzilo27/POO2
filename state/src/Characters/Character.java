@@ -59,11 +59,13 @@ public abstract class Character {
 
     public void earnLife(int life){
         this.getState().earnLife(life);
+        this.getState().verifyStateChange();
         System.out.println("Life: " + this.getLife());
     }
 
     public void loseLife(int life){
         this.getState().loseLife(life);
+        this.getState().verifyStateChange();
         System.out.println("Life: " + this.getLife());
     }
 }

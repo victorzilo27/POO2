@@ -15,6 +15,7 @@ public class DangerState extends State{
     public void verifyStateChange(){
         if(getCharacter().getLife() > getUpperLimit()){
             getCharacter().setState(new NormalState(getCharacter()));
+            getCharacter().getState().verifyStateChange();
         }
         else if(getCharacter().getLife() < getLowerLimit()){
             getCharacter().setState(new DeadState(getCharacter()));

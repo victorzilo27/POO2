@@ -14,12 +14,8 @@ public class NormalState extends State{
 
     public void verifyStateChange(){
         if(getCharacter().getLife() < getLowerLimit()){
-            // check if the character is dead
-            if(getCharacter().getLife() == 0){
-                getCharacter().setState(new DeadState(getCharacter()));
-                return;
-            }
             getCharacter().setState(new DangerState(getCharacter()));
+            getCharacter().getState().verifyStateChange();
         }
         else if(getCharacter().getLife() > getUpperLimit()){
             getCharacter().setState(new StrongState(getCharacter()));

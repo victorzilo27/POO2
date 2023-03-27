@@ -11,7 +11,7 @@ public abstract class State {
     }
 
     protected abstract void setLimits();
-    protected abstract void verifyStateChange();
+    public abstract void verifyStateChange();
 
     public Character getCharacter() {
         return character;

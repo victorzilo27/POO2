@@ -15,8 +15,9 @@ public class StrongState extends State{
     public void verifyStateChange(){
         if(getCharacter().getLife() < getLowerLimit()){
             getCharacter().setState(new NormalState(getCharacter()));
+            getCharacter().getState().verifyStateChange();
         } else if(getCharacter().getLife() > getUpperLimit()){
-            getCharacter().setLife(getUpperLimit()); // limit the life
+            getCharacter().setLife(this.getUpperLimit()); // limit the life
         }
     }
 
