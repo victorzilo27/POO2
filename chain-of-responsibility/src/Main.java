@@ -1,7 +1,6 @@
 import Characters.Character;
 import Characters.Concrete.Character01;
-import Characters.Concrete.Character02;
-import Characters.Concrete.Character03;
+
 
 class Main{
     public static void main(String[] args){
