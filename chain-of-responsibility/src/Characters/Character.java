@@ -11,6 +11,16 @@ public abstract class Character {
     private Jump jump;
     private Run run;
     private int life;
+    private Shield shield;
+
+    public void setShield(Shield shield) {
+        this.shield = shield;
+    }
+
+    public void LoselifeShield(int valor){
+        this.shield.processaShield(valor);
+        this.getState().verifyStateChange();
+    }
 
     public Character(){
         this.state = new NormalState(this);

@@ -1,10 +1,15 @@
 package Characters.Chains;
+import Characters.Shield;
+import Characters.Character;
+public class Shield3 extends Shield {
+     
+    public Shield3(Character character){
+        super(character);
+    }
 
-public class Shield3 {
-    
-    public int processaShield(int valor){
+    public void processaShield(int valor){
         int dmg = valor-3;
-        
-        return dmg;
+        getCharacter().setLife(getCharacter().getLife() - dmg);
+        System.out.println("Shield3 Usado");
     }
 }
