@@ -1,5 +1,6 @@
 package Strategy.Character;
 
+import ChainOfResponsability.Shield;
 import State.State;
 import State.States.Normal.NormalState;
 import Strategy.Skills.Attack.Attack;
@@ -11,6 +12,7 @@ public abstract class Character {
     private Attack attack;
     private Jump jump;
     private Run run;
+    private Shield shield;
     private int life;
 
     public Character(){
@@ -58,15 +60,25 @@ public abstract class Character {
         this.state = state;
     }
 
-    public void earnLife(int life){
-        this.getState().earnLife(life);
-        this.getState().verifyStateChange();
-        System.out.println("Life: " + this.getLife());
+    public Shield getShield() {
+        return shield;
     }
 
-    public void loseLife(int life){
-        this.getState().loseLife(life);
-        this.getState().verifyStateChange();
+    public void setShield(Shield shield) {
+        this.shield = shield;
+    }
+
+    public void earnLife(int life){
+        this.getState().earnLife(life);
+        System.out.println("Earned Life: " + life);
         System.out.println("Life: " + this.getLife());
+        System.out.println("State: " + this.getState().toString());
+    }
+
+    public void loseLife(int damage){
+        this.getState().loseLife(damage);
+        System.out.println("Damage: " + damage);
+        System.out.println("Life: " + this.getLife());
+        System.out.println("State: " + this.getState().toString());
     }
 }
