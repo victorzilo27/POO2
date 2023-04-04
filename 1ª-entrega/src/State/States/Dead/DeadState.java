@@ -9,10 +9,7 @@ public class DeadState extends State {
     }
 
     public void verifyStateChange() {
-        // life can't be negative
-        if(getCharacter().getLife() < getLowerLimit()){
-            getCharacter().setLife(getLowerLimit());
-        }
+        getCharacter().setLife(getLowerLimit());
         System.out.println("You are dead!");
     }
 

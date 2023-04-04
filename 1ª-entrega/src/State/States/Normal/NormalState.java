@@ -21,6 +21,7 @@ public class NormalState extends State{
         }
         else if(getCharacter().getLife() > getUpperLimit()){
             getCharacter().setState(new StrongState(getCharacter()));
+            getCharacter().getState().verifyStateChange();
         }
     }
 

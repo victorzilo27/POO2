@@ -39,13 +39,22 @@ public abstract class State {
         this.lowerLimit = lowerLimit;
     }
 
+    @Override
+    public String toString() {
+        String currentState = this.getClass().getSimpleName().replace("State", "");
+        return currentState;
+    }
+
     public void earnLife(int life){
         character.setLife(character.getLife() + life);
         verifyStateChange();
     }
 
     public void loseLife(int life){
-        character.setLife(character.getLife() - life);
+        if(this.getCharacter().getShield() != null)
+            this.getCharacter().getShield().handleSuccessor(this.getCharacter(), life);
+        else
+            character.setLife(character.getLife() - life);
         verifyStateChange();
     }
 }
