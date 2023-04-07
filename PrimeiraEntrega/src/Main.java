@@ -1,8 +1,13 @@
 import ChainOfResponsability.Shield;
 import ChainOfResponsability.Chains.Shield10;
 import ChainOfResponsability.Chains.Shield5;
+import Decorator.Attack.Concrete.Melee;
+import Decorator.Attack.Concrete.Ranged;
+import Decorator.Attack.Concrete.Special;
 import Strategy.Character.Character;
 import Strategy.Character.Concrete.Character01;
+import Strategy.Skills.Attack.Attack;
+import Strategy.Skills.Attack.Concrete.Strong.StrongAttack;
 
 class Main {
     public static void main(String[] args) {
@@ -25,8 +30,15 @@ class Main {
 
         c.setShield(s1);
 
-        // 70 + 40 = 100
-        // 100 - 85 = 100(sem shield) 25
+        // Create decorator
+        Attack a = new StrongAttack();
+        a = new Melee(a);
+        a = new Ranged(a);
+        a = new Special(a);
+
+        System.out.println("Attack: " + a.attack());
+        System.out.println("Damage: " + a.getDamage());
+
 
         // State: Normal
         System.out.println();

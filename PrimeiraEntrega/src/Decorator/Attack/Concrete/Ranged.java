@@ -1,14 +1,15 @@
 package Decorator.Attack.Concrete;
 
 import Decorator.Attack.AttackDecorator;
+import Strategy.Skills.Attack.Attack;
 
 public class Ranged extends AttackDecorator {
-    public Ranged(AttackDecorator decoratedAttack) {
+    public Ranged(Attack decoratedAttack) {
         super(decoratedAttack);
+        setDamage(5);
     }
 
-    @Override
-    public void attack() {
-        System.out.println("Ranged attack!");
+    public String attack() {
+        return super.attack() + " with ranged" + " (" + getDamage() + ")";
     }
 }

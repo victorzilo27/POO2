@@ -8,4 +8,12 @@ public abstract class AttackDecorator extends Attack {
     public AttackDecorator(Attack decoratedAttack) {
         this.decoratedAttack = decoratedAttack;
     }
+
+    public int getDamage() {
+        return decoratedAttack.getDamage() + super.getDamage();
+    }
+
+    public String attack() {
+        return decoratedAttack.attack();
+    }
 }

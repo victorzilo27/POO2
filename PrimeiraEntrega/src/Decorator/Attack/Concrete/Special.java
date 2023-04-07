@@ -1,14 +1,15 @@
 package Decorator.Attack.Concrete;
 
 import Decorator.Attack.AttackDecorator;
+import Strategy.Skills.Attack.Attack;
 
 public class Special extends AttackDecorator {
-    public Special(AttackDecorator decoratedAttack) {
+    public Special(Attack decoratedAttack) {
         super(decoratedAttack);
+        setDamage(25);
     }
 
-    @Override
-    public void attack() {
-        System.out.println("Special attack!");
+    public String attack() {
+        return super.attack() + " with special" + " (" + getDamage() + ")";
     }
 }

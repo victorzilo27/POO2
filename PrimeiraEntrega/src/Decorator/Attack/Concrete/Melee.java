@@ -1,14 +1,14 @@
 package Decorator.Attack.Concrete;
 
 import Decorator.Attack.AttackDecorator;
+import Strategy.Skills.Attack.Attack;
 
 public class Melee extends AttackDecorator {
-    public Melee(AttackDecorator decoratedAttack) {
+    public Melee(Attack decoratedAttack) {
         super(decoratedAttack);
     }
 
-    @Override
-    public void attack() {
-        System.out.println("Melee attack!");
+    public String attack() {
+        return super.attack() + " with melee" + " (" + getDamage() + ")";
     }
 }
