@@ -1,5 +1,5 @@
 package Strategy.Skills.Attack;
 
-public interface Attack {
-    public void attack();
+public abstract class Attack {
+    public abstract void attack();
 }
