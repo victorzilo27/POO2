@@ -1,9 +1,12 @@
 package Strategy.Skills.Attack.Concrete.Low;
 import Strategy.Skills.Attack.Attack;
 
-public class LowAttack implements Attack {
-    @Override
-    public void attack() {
-        System.out.println("Low Attack");
+public class LowAttack extends Attack {
+    public LowAttack() {
+        super(5);
+    }
+
+    public String attack() {
+        return "Low attack" + " (" + getDamage() + ")";
     }
 }

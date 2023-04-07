@@ -8,8 +8,12 @@ public class Shield5 extends Shield {
         int damageAfterShield = damage - 5;
 
         if (damageAfterShield > 0 && getSuccessor() != null) {
-            System.out.println("Shield5: Character took " + damageAfterShield + " damage");
+            System.out.println("Shield5: Damage reduced by 5");
             getSuccessor().handleSuccessor(character, damageAfterShield);
+        } else if (damageAfterShield > 0 && getSuccessor() == null) {
+            System.out.println("Shield5: Damage reduced by 5");
+            System.out.println("New Damage: " + damageAfterShield);
+            character.setLife(character.getLife() - damageAfterShield);
         } else {
             System.out.println("Shield5: Character took 0 damage");
         }
