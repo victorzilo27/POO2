@@ -7,6 +7,6 @@ public class LowAttack extends Attack {
     }
 
     public String attack() {
-        return "Low attack";
+        return "Low attack" + " (" + getDamage() + ")";
     }
 }

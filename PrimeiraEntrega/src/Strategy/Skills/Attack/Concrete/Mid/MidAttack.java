@@ -7,6 +7,6 @@ public class MidAttack extends Attack {
     }
     
     public String attack() {
-        return "Mid attack";
+        return "Mid attack" + " (" + getDamage() + ")";
     }
 }

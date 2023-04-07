@@ -6,8 +6,6 @@ import Decorator.Attack.Concrete.Ranged;
 import Decorator.Attack.Concrete.Special;
 import Strategy.Character.Character;
 import Strategy.Character.Concrete.Character01;
-import Strategy.Skills.Attack.Attack;
-import Strategy.Skills.Attack.Concrete.Strong.StrongAttack;
 
 class Main {
     public static void main(String[] args) {
@@ -17,9 +15,9 @@ class Main {
 
         System.out.println("Character 01");
         c = new Character01();
-        c.attack();
-        c.jump();
-        c.run();
+        System.out.println("Attack: " + c.getAttack().attack());
+        System.out.println("Jump: " + c.getJump().jump());
+        System.out.println("Run: " + c.getRun().run());
 
         // Linking the chain of responsibility of shields
         Shield s1 = new Shield5();
@@ -31,33 +29,32 @@ class Main {
         c.setShield(s1);
 
         // Create decorator
-        Attack a = new StrongAttack();
-        a = new Melee(a);
-        a = new Ranged(a);
-        a = new Special(a);
+        c.setAttack(new Melee(c.getAttack()));
+        c.setAttack(new Ranged(c.getAttack()));
+        c.setAttack(new Special(c.getAttack()));
 
-        System.out.println("Attack: " + a.attack());
-        System.out.println("Damage: " + a.getDamage());
-
+        System.out.println();
+        System.out.println("Attack: " + c.getAttack().attack());
+        System.out.println("Damage: " + c.getAttack().getDamage());
 
         // State: Normal
         System.out.println();
         System.out.println("Initial State: " + c.getState().toString());
+        System.out.println("Life: " + c.getLife());
         System.out.println();
 
         // State: Strong
         c.earnLife(40);
-        System.out.println("State after earning 40: " + c.getState().toString());
+
         System.out.println();
 
         // State: Danger
         c.loseLife(85);
-        System.out.println("State after losing 85: " + c.getState().toString());
+
         System.out.println();
 
         // State: Dead
         c.loseLife(100);
-        System.out.println("State after losing 100: " + c.getState().toString());
 
         System.out.println("--- Game Ended ---");
     }

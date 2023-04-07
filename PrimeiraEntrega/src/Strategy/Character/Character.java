@@ -32,6 +32,18 @@ public abstract class Character {
         this.run = run;
     }
 
+    public Attack getAttack() {
+        return attack;
+    }
+
+    public Jump getJump() {
+        return jump;
+    }
+
+    public Run getRun() {
+        return run;
+    }
+
     public void attack() {
         attack.attack();
     }
@@ -76,8 +88,8 @@ public abstract class Character {
     }
 
     public void loseLife(int damage){
-        this.getState().loseLife(damage);
         System.out.println("Damage: " + damage);
+        this.getState().loseLife(damage);
         System.out.println("Life: " + this.getLife());
         System.out.println("State: " + this.getState().toString());
     }

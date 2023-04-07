@@ -6,6 +6,7 @@ import Strategy.Skills.Attack.Attack;
 public class Melee extends AttackDecorator {
     public Melee(Attack decoratedAttack) {
         super(decoratedAttack);
+        setDamage(10);
     }
 
     public String attack() {

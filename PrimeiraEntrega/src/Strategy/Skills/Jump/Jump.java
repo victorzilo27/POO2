@@ -1,5 +1,5 @@
 package Strategy.Skills.Jump;
 
 public interface Jump {
-    public void jump();
+    public String jump();
 }
