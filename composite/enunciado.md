@@ -4,7 +4,7 @@ Implementar a configuração das fases do game de forma flexível utilizando o p
 composite.
 
 Uma fase deve ser representada por um composite de elementos. Este composite deve
-representar um labirinto. 
+representar um labirinto.
 
 Neste contexto, o jogador (personagem) deve encontrar a saída do labirinto. 
 

@@ -93,4 +93,9 @@ public abstract class Character {
         System.out.println("Life: " + this.getLife());
         System.out.println("State: " + this.getState().toString());
     }
+
+    public void play(){
+        Integer randomNumber = Math.random() < 0.5 ? 0 : 1;
+        // if (randomNumber == 0) go to path1 else go to path2
+    }
 }
